@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lara9k
+spec:
+  selector:
+    matchLabels:
+      run: lara9k
+  template:
+    metadata:
+      labels:
+        run: lara9k
+    spec:
+      containers:
+        - name: laravel9
+          image: cristirond/lara9k
+          ports:
+            - containerPort: 80
+          env:
+            - name: APP_KEY
+              value: base64:cHRuamkyM2h5b3g4Y3p2emloYWkyNGp6c3c5b3RxMnA=
+

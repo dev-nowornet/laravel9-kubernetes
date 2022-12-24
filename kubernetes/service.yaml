@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: lara9k
+spec:
+  type: NodePort
+  selector:
+    run: lara9k
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30007
